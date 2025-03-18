@@ -14,6 +14,5 @@ import copy
 
 from utils import *
 from learning import *
-from grid_world import GridWorld
-from agent import Agent
+
 from typing import Tuple
