@@ -30,12 +30,25 @@ import matplotlib.animation as animation
 import matplotlib.patches as patches
 import csv
 
-
 """
 ====================================================================================================
 GENERAL UTILITIES
 ====================================================================================================
 """
+
+def array_duplicate(value, array_length: int = 1):
+    """
+    Creates a list with duplicated elements of the specified value.
+
+    Args:
+        value (any): The value to duplicate.
+        array_length (int, optional): The number of times to duplicate the value. Defaults to 1.
+
+    Returns:
+        list: A list containing the duplicated values.
+    """
+    return [value for i in range(array_length)]
+
 
 def get_key_by_value(dictionary, target_value):
     """
