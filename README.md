@@ -33,6 +33,11 @@ This project implements a Grid World environment for reinforcement learning algo
         4. [] robot’s velocity
     * [] Put all source code/software in the Appendix with instruction of running the code.
 
+## Feature Goals
+
+1) [] Generate Animation Display
+2) [] Modularize Trajectory Generation
+
 ## Features
 
 Lorem ipsum
