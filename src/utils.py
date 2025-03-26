@@ -32,10 +32,9 @@ import csv
 
 """
 ====================================================================================================
-GENERAL UTILITIES
+PROJECT THREE UTILITIES
 ====================================================================================================
 """
-
 def array_duplicate(value, array_length: int = 1):
     """
     Creates a list with duplicated elements of the specified value.
@@ -49,6 +48,23 @@ def array_duplicate(value, array_length: int = 1):
     """
     return [value for i in range(array_length)]
 
+def square_magnitude(vector):
+    """
+    Calculates the square magnitude of a vector.
+    """
+    return vector.dot(vector)
+
+def magnitude(vector):
+    """
+    Calculates the magnitude of a vector.
+    """
+    return np.sqrt(square_magnitude(vector))
+
+"""
+====================================================================================================
+GENERAL UTILITIES
+====================================================================================================
+"""
 
 def get_key_by_value(dictionary, target_value):
     """
