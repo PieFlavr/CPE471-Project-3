@@ -35,6 +35,7 @@ import csv
 PROJECT THREE UTILITIES
 ====================================================================================================
 """
+# region Project_Three_Utils
 def array_duplicate(value, array_length: int = 1):
     """
     Creates a list with duplicated elements of the specified value.
@@ -59,13 +60,14 @@ def magnitude(vector):
     Calculates the magnitude of a vector.
     """
     return np.sqrt(square_magnitude(vector))
+# endregion
 
 """
 ====================================================================================================
 GENERAL UTILITIES
 ====================================================================================================
 """
-
+# region General_Utils
 def get_key_by_value(dictionary, target_value):
     """
     Retrieves the key associated with the given value in a dictionary.
@@ -104,13 +106,16 @@ def q_table_to_2d_array(q_table, grid_length, grid_width):
             row = [f"({x},{y})"] + list(q_table[x, y, :])
             rows.append(row)
     return np.array(rows)
+# endregion
 
 """
 ====================================================================================================
 PLOTTING UTILITIES
 ====================================================================================================
 """
+# region Plotting_Utils
 
+# region Deprecated
 def plot_action_sequence(action_sequence: list = None, 
                         grid_length: int = 5, grid_width: int = 5, 
                         title = None, subtitle = None, fps = 48,
@@ -300,12 +305,68 @@ def plot_algorithm_data(data_dict: dict, episodes: int,
     plt.legend()
     
     return fig
+# endregion
+
+# region New
+
+def animate_field(agent_position: np.array, target_position: np.array, 
+                  title: str, subtitle: str = None, figsize: tuple = (12, 8), fps: int = 48) -> tuple[plt.Figure, animation.FuncAnimation]:
+    """
+    Animates the movement of an agent and a target on a 2D field.
+
+    Args:
+        agent_position (np.array): Array of agent positions, where each element is a tuple (x, y) representing the agent's position at a specific frame.
+        target_position (np.array): Array of target positions, where each element is a tuple (x, y) representing the target's position at a specific frame.
+        title (str): Title of the animation.
+        subtitle (str, optional): Subtitle of the animation. Defaults to None.
+        figsize (tuple, optional): Size of the figure in inches (width, height). Defaults to (12, 8).
+        fps (int, optional): Frames per second for the animation. Defaults to 48.
+
+    Returns:
+        plt.Figure: The matplotlib figure object for the animation.
+        animation.FuncAnimation: The animation object.
+    """
+    # Initialize the figure
+    fig, ax = plt.subplots(figsize=figsize)
+    ax.set_xlim(0, 100)
+    ax.set_ylim(0, 100)
+    ax.set_xticks(np.arange(0, 100, 20))
+    ax.set_yticks(np.arange(0, 100, 20))
+    ax.grid(True)
+
+    def update(frame):
+        # Update the agent position
+        agent_x, agent_y = agent_position[frame]
+        agent_circle = patches.Circle((agent_x, agent_y), radius=0.5, color='blue', alpha=0.5)
+        ax.add_patch(agent_circle)
+
+        # Update the target position
+        target_x, target_y = target_position[frame]
+        target_circle = patches.Circle((target_x, target_y), radius=0.5, color='red', alpha=0.5)
+        ax.add_patch(target_circle)
+
+    ani = None
+    print("Generating field animation...")
+    ani = animation.FuncAnimation(fig, update, frames=len(agent_position), interval=1000/fps, repeat=False)
+    print("Field animation complete.")
+
+    plt.title(title)
+    plt.suptitle(subtitle, fontsize=8)
+    plt.legend()
+
+    return plt, ani
+# endregion
+
+# endregion
 
 """
 ====================================================================================================
 FILE SAVING UTILITIES
 ====================================================================================================
 """
+# region File_Saving_Utils
+
+# region Depreceated
 
 def save_training_data_to_csv(filename, training_data):
     """
@@ -357,3 +418,12 @@ def interpret_action_sequence(action_sequence, actions: dict = None) -> list:
     interpreted_sequence = [get_key_by_value(actions, action) for action in action_sequence]
     return interpreted_sequence
 
+# endregion
+
+# region New
+
+
+
+# endregion
+
+# endregion
