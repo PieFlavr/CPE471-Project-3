@@ -138,12 +138,19 @@ def main():
                                                                     * math.sin(target_theta[i] - agent_theta[i-1]))
                                                                 / (agent_velocity[i] if agent_velocity[i] >= target_velocity else target_velocity)) # Compute desired heading
             agent_theta[i] = desired_agent_theta # Compute agent heading
-        
+
+        plot = None
+        plot = animate_field(agent_position, target_position, # i hate this but it prevents issue with double plotting
+                      title="Agent and Target Trajectories", 
+                      subtitle="Trajectories of Agent and Target",
+                      figsize=(10,10), fps = 48)
+        plt.show()
+
+        plot = None
         plot, animation = animate_field(agent_position, target_position,
                       title="Agent and Target Trajectories", 
                       subtitle="Trajectories of Agent and Target",
                       figsize=(10,10), fps = 48)
-        plot.show(block=True)
         print("Saving Animation...")
         animation.save("project.gif", writer='pillow', fps=48)
         print("Animation Saved!")
