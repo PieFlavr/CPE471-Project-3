@@ -18,5 +18,6 @@ import copy
 # Other Source Imports
 from utils import *
 from learning import *
+from trajectories import * 
 
 from typing import Tuple
