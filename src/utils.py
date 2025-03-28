@@ -327,34 +327,40 @@ def animate_field(agent_position: np.array, target_position: np.array,
         animation.FuncAnimation: The animation object.
     """
     # Initialize the figure
+
     fig, ax = plt.subplots(figsize=figsize)
     ax.set_xlim(0, 100)
     ax.set_ylim(0, 100)
     ax.set_xticks(np.arange(0, 100, 20))
     ax.set_yticks(np.arange(0, 100, 20))
     ax.grid(True)
+    ax.set_title(title)
+    ax.set_xlabel('X-axis')
+    ax.set_ylabel('Y-axis')
+    if subtitle:
+        plt.suptitle(subtitle, fontsize=8)
+    
+    ax.add_patch(patches.Circle((0, 0), radius=0.5, color='blue', alpha=0.5, label="Agent"))
+    ax.add_patch(patches.Circle((0, 0), radius=0.5, color='red', alpha=0.5, label="Target"))
+    ax.legend(loc='upper right')
 
     def update(frame):
         # Update the agent position
         agent_x, agent_y = agent_position[frame]
-        agent_circle = patches.Circle((agent_x, agent_y), radius=0.5, color='blue', alpha=0.5)
+        agent_circle = patches.Circle((agent_x, agent_y), radius=0.5, color='blue', alpha=0.5, label="Agent")
         ax.add_patch(agent_circle)
 
         # Update the target position
         target_x, target_y = target_position[frame]
-        target_circle = patches.Circle((target_x, target_y), radius=0.5, color='red', alpha=0.5)
+        target_circle = patches.Circle((target_x, target_y), radius=0.5, color='red', alpha=0.5, label="Target")
         ax.add_patch(target_circle)
 
     ani = None
     print("Generating field animation...")
     ani = animation.FuncAnimation(fig, update, frames=len(agent_position), interval=1000/fps, repeat=False)
-    print("Field animation complete.")
+    print("Field animation complete!")
 
-    plt.title(title)
-    plt.suptitle(subtitle, fontsize=8)
-    plt.legend()
-
-    return plt, ani
+    return fig, ani
 # endregion
 
 # endregion
