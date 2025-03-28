@@ -6,37 +6,40 @@ This project implements a Grid World environment for reinforcement learning algo
 
 ## Project Goals
 
-1) [] Design/Implement an Artificial Potential Controller to allow a mobile robotto follow/track a virtual moving target.
-2) [] Write Matlab, Python, or C/Cpp code to implement your designed potential controller
+1) [X] Design/Implement an Artificial Potential Controller to allow a mobile robot to follow/track a virtual moving target.
+2) [X] Write Matlab, Python, or C/Cpp code to implement your designed potential controller
 3) [] Write a report of the project to cover the following items:
-    * [] (50 points total) Noise free environment (robot is assumed to localize itself accurately without noise, and be able to sense target position accurately).
-        * [] **(25 points) Plan the target to move in a linear/line trajectory and plot the tracking results:**
-        1. [] trajectories of the target and robot
-        2. [] tracking error between the target and robot
-        3. [] robot’s heading
-        4. [] robot’s velocity
-        * [] **(25 points) Plan the target to move in the sine wave trajectory and plot the tracking results:**
-        1. [] trajectories of the target and robot
-        2. [] tracking error between the target and robot
-        3. [] robot’s heading
-        4. [] robot’s velocity
-    * [] (50 points total) Noisy environment (robot is assumed to be able to sense the target, but with noise ). You can use Gaussian noise model (randn function), a similar noise function in the project 1.
-        * [] **(25 points) Plan the target to move in a linear/line trajectory and plot the tracking results:**
-        1. [] trajectories of the target and robot
-        2. [] tracking error between the target and robot
-        3. [] robot’s heading
-        4. [] robot’s velocity
-        * [] **(25 points) Plan the target to move in the sine wave trajectory and plot the tracking results:**
-        1. [] trajectories of the target and robot
-        2. [] tracking error between the target and robot
-        3. [] robot’s heading
-        4. [] robot’s velocity
+    * [X] (50 points total) Noise free environment (robot is assumed to localize itself accurately without noise, and be able to sense target position accurately).
+        * [X] **(25 points) Plan the target to move in a linear/line trajectory and plot the tracking results:**
+        1. [X] trajectories of the target and robot
+        2. [X] tracking error between the target and robot
+        3. [X] robot’s heading
+        4. [X] robot’s velocity
+        * [X] **(25 points) Plan the target to move in the sine wave trajectory and plot the tracking results:**
+        1. [X] trajectories of the target and robot
+        2. [X] tracking error between the target and robot
+        3. [X] robot’s heading
+        4. [X] robot’s velocity
+    * [X] (50 points total) Noisy environment (robot is assumed to be able to sense the target, but with noise ). You can use Gaussian noise model (randn function), a similar noise function in the project 1.
+        * [X] **(25 points) Plan the target to move in a linear/line trajectory and plot the tracking results:**
+        1. [X] trajectories of the target and robot
+        2. [X] tracking error between the target and robot
+        3. [X] robot’s heading
+        4. [X] robot’s velocity
+        * [X] **(25 points) Plan the target to move in the sine wave trajectory and plot the tracking results:**
+        1. [X] trajectories of the target and robot
+        2. [X] tracking error between the target and robot
+        3. [X] robot’s heading
+        4. [X] robot’s velocity
     * [] Put all source code/software in the Appendix with instruction of running the code.
 
 ## Feature Goals
 
-1) [] Generate Animation Display
-2) [] Modularize Trajectory Generation
+1) [X] Generate Animation Display
+2) [X] Modularize Trajectory Generation
+3) [X] Implement Error/Distance, Velocity (robot), and Heading (relative, agent, target)
+4) [X] Implement Plotting of Above Statistics
+5) [X] Implement Proper File Saving of GIFs
 
 ## Features
 
@@ -72,7 +75,21 @@ python src/__main__.py
 
 Once the projects starts, by default, it will in sequence:
 
-1. lorem ipsum
+1) Run the following simulations as follows:
+    1. No Noise Linear
+    2. No Noise Sine
+    3. Noisy Linear
+    4. Noisy Sine
+2) For each simulation, in order performs the following:
+    1. Generates Trajectory Animation
+    2. Generates Error Distance Plot
+    3. Saves Error Distance Plot
+    4. Generates Velocity Plot
+    5. Saves Velocity Plot
+    6. Generates Heading Plot
+    7. Saves Heading Pot
+    8. Regenerates Trajectory Animation
+    9. Saves Trajectory Animation
 
 ## Configuration
 
