@@ -19,7 +19,7 @@ def main():
 
         """
         ====================================================================================================
-        CONSTANT HYPERPARAMETERS
+        CONSTANT HYPERPARAMETERS       OOO   USER MODIFIABLE   OOO
         ====================================================================================================
         """
         # Simulation Parameters
@@ -27,9 +27,8 @@ def main():
         block_figures = False # Flag to enable blocking figures, 0 = no block, 1 = block
         show_figures = False # Flag to enable showing figures, 0 = no show, 1 = show
         fps = 120 # Frames per second for animation
-        base_file_path = 'project_data'
+        base_file_path = 'training_data' # Base file path for saving figures and animations
 
-        do_simulation_set = 1 # Flag to enable set simulation types, OVERRIDES P, 0 = no all simulations, 1 = all simulations
         noise_simulation_set = (0, 1) # Range of noise types to simulate, 0 = no noise, 1 = noise
         trajectory_simulation_set = (1, 2) # Range of trajectory types to simulate, 0 = circular, 1 = linear, 2 = sine
 
