@@ -33,19 +33,20 @@ This project implements a Grid World environment for reinforcement learning algo
         4. [X] robot’s velocity
     * [] Put all source code/software in the Appendix with instruction of running the code.
 
-## Feature Goals
-
-1) [X] Generate Animation Display
-2) [X] Modularize Trajectory Generation
-3) [X] Implement Error/Distance, Velocity (robot), and Heading (relative, agent, target)
-4) [X] Implement Plotting of Above Statistics
-5) [X] Implement Proper File Saving of GIFs
-
 ## Features
 
-Lorem ipsum
-
-* **lorem ipsum**: lorem ipsum
+1) [X] Generates Animation Display
+    * **DEFAULT**: blocks until user closes figure windows
+    * **DISABLING BLOCKING/SHOWING**: modify `show_figures` and `block_figures`
+    * **ANIMATION FPS**: modify `fps`
+2) [X] Modularized Trajectory Generation (circular, line, sine, noisy, not noisy)
+    * **DEFAULT**: by default, runs only line and sine both noisy not noisy
+    * **SPECIFYING SIMULATION TYPES**: must modify `noise_simulation_set` and `trajectory_simulation_set` to change
+3) [X] Implemented Error/Distance, Velocity (robot), and Heading Tracking (relative, agent, target)
+4) [X] Implemented Plotting of Above Statistics
+5) [X] Implemented Proper File Saving of GIFs and Figures
+    * **DEFAULT**: is saved to `training_data` in appropriate subfolders and enabled
+    * **FILE NAMES**: can also be modified, though not recommended, via `noise_simulation_set_names` and `trajectory_simulation_set_names`
 
 ## Project Submission Files
 
