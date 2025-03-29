@@ -142,6 +142,12 @@ def main():
                                                                         amplitude=15, frequency=0.5, phase_shift=0.5)
                 # endregion TRAJECTORY_GENERATION
                 
+                """
+                ====================================================================================================
+                MAIN SIMULATION SEQUENCE
+                ====================================================================================================
+                """ 
+
                 for i in range (1, len(simulation_steps)):
                     # time = (simulation_steps[i])/100 # Convert time to seconds
                     time = delta_time # Using time as a step as opposed to total time
@@ -194,6 +200,11 @@ def main():
                     agent_theta[i] = desired_agent_theta # Compute agent heading
                     # endregion CONTROLLER_COMPUTATION
 
+                """
+                ====================================================================================================
+                FIGURE GENERATION AND ANIMATION
+                ====================================================================================================
+                """ 
                 # region FIGURES
 
                 subfolder_path = None 
