@@ -177,7 +177,9 @@ def main():
                     # print("Agent Position: ", agent_position[i,:], "Agent Velocity: ", agent_velocity[i-1], "Agent Theta: ", agent_theta[i-1])
                     
                     # Compute relative states
-                    relative_position[i,:] = target_position[i,:] - agent_position[i,:] + (noise_type * np.array([generate_noise(noise_mean, noise_sigma), generate_noise(noise_mean, noise_sigma)])) # Compute relative position
+                    relative_position[i,:] = (target_position[i,:] - agent_position[i,:]
+                                                + (noise_type 
+                                                    * np.array([generate_noise(noise_mean, noise_sigma), generate_noise(noise_mean, noise_sigma)]))) # Compute relative position
                     relative_velocity[i,:] = [(target_velocity * np.cos(target_theta[i])) # Compute relative velocities
                                                 - (agent_velocity[i-1] * np.cos(agent_theta[i-1])),
                                             (target_velocity * np.sin(target_theta[i]))
