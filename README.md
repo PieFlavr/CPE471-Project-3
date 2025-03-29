@@ -2,13 +2,13 @@
 
 ## Overview
 
-This project implements a Grid World environment for reinforcement learning algorithms. The environment is a grid where an agent learns to navigate from a starting position to a goal position while maximizing rewards and minimizing penalties via a wide variety of algorithms.
+This project implements an Artifical Potential Field Controller primarily used to track a virtual target for the robot agent to follow.
 
 ## Project Goals
 
 1) [X] Design/Implement an Artificial Potential Controller to allow a mobile robot to follow/track a virtual moving target.
 2) [X] Write Matlab, Python, or C/Cpp code to implement your designed potential controller
-3) [] Write a report of the project to cover the following items:
+3) [X] Write a report of the project to cover the following items:
     * [X] (50 points total) Noise free environment (robot is assumed to localize itself accurately without noise, and be able to sense target position accurately).
         * [X] **(25 points) Plan the target to move in a linear/line trajectory and plot the tracking results:**
         1. [X] trajectories of the target and robot
@@ -31,7 +31,7 @@ This project implements a Grid World environment for reinforcement learning algo
         2. [X] tracking error between the target and robot
         3. [X] robot’s heading
         4. [X] robot’s velocity
-    * [] Put all source code/software in the Appendix with instruction of running the code.
+    * [X] Put all source code/software in the Appendix with instruction of running the code.
 
 ## Features
 
@@ -94,6 +94,4 @@ Once the projects starts, by default, it will in sequence:
 
 ## Configuration
 
-The main configuration settings for the Grid World environment and reinforcement learning algorithms can be found in the `main` function. Below is a list of settings that you can customize:
-
-You can modify these settings in the `main` function to suit your specific requirements. In future projects, the hope is to be able to read a JSON file with all these settings in one place as opposed to modifying the code itself.
+The main configuration settings for the Grid World environment and reinforcement learning algorithms can be found in the `main` function, namely as the `CONSTANT HYPERPARAMETERS`. You can modify these settings which are found in the `main` function to suit your specific requirements.
