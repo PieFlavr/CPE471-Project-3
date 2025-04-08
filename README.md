@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements an Artifical Potential Field Controller primarily used to track a virtual target for the robot agent to follow.
+This project implements an Artificial Potential Field Controller primarily used to track a virtual target for the robot agent to follow.
 
 ## Project Goals
 
