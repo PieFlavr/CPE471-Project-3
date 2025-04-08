@@ -1,4 +1,4 @@
-# Grid World Reinforcement Learning
+# Artificial Potential Fields
 
 ## Overview
 
